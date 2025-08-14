@@ -242,6 +242,12 @@ Urgency: "Formation patrimoine. Cohérence pédagogique = places limitées."`,
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+    {/* Notification */}
+{notification && (
+  <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300">
+    {notification}
+  </div>
+)}
       {/* Navigation flottante */}
 <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/80 backdrop-blur-md rounded-full px-6 py-3 border border-purple-500/30">
   <div className="flex space-x-6 text-sm">
