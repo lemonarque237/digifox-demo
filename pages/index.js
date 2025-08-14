@@ -227,15 +227,15 @@ Urgency: "Formation patrimoine. Cohérence pédagogique = places limitées."`,
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Navigation flottante */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/80 backdrop-blur-md rounded-full px-6 py-3 border border-purple-500/30">
-        <div className="flex space-x-6 text-sm">
-          <button onClick={() => setActiveSection('hero')} className="hover:text-purple-400 transition-colors">Accueil</button>
-          <button onClick={() => setActiveSection('demo')} className="hover:text-purple-400 transition-colors">Démo</button>
-          <button onClick={() => setActiveSection('workflow')} className="hover:text-purple-400 transition-colors">Processus</button>
-          <button onClick={() => setActiveSection('tools')} className="hover:text-purple-400 transition-colors">Stack Tech</button>
-          <button onClick={() => setActiveSection('results')} className="hover:text-purple-400 transition-colors">Résultats</button>
-        </div>
-      </nav>
+<nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/80 backdrop-blur-md rounded-full px-6 py-3 border border-purple-500/30">
+  <div className="flex space-x-6 text-sm">
+    <button onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-purple-400 transition-colors">Accueil</button>
+    <button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-purple-400 transition-colors">Démo</button>
+    <button onClick={() => document.getElementById('workflow')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-purple-400 transition-colors">Processus</button>
+    <button onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-purple-400 transition-colors">Stack Tech</button>
+    <button onClick={() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-purple-400 transition-colors">Résultats</button>
+  </div>
+</nav>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
