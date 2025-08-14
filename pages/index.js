@@ -7,6 +7,22 @@ export default function DigifoxDemo() {
   const [generatedContent, setGeneratedContent] = useState([]);
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedScript, setSelectedScript] = useState(0);
+  const [notification, setNotification] = useState('');
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('denevegabin@gmail.com');
+    setNotification('Email copié dans le presse-papier !');
+    setTimeout(() => setNotification(''), 3000);
+  };
+
+  const openWhatsApp = () => {
+    const message = encodeURIComponent('Bonjour Gabin, j\'ai vu votre candidature pour Digifox et je souhaite vous recruter. Pouvons-nous discuter ?');
+    window.open(`https://wa.me/4961062671309?text=${message}`, '_blank');
+  };
+
+  const scrollToDemo = () => {
+    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const generateScripts = async (client) => {
     setIsGenerating(true);
@@ -281,13 +297,14 @@ Urgency: "Formation patrimoine. Cohérence pédagogique = places limitées."`,
           </div>
 
           <button 
-            onClick={() => setActiveSection('demo')}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-          >
-            <Play className="w-5 h-5 mr-2" />
-            Voir la méthode en action
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </button>
+<button 
+  onClick={scrollToDemo}
+  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+>
+  <Play className="w-5 h-5 mr-2" />
+  Voir la méthode en action
+  <ArrowRight className="w-5 h-5 ml-2" />
+</button>
         </div>
       </section>
 
